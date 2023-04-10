@@ -1,9 +1,60 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-weight: 320;
+}
+h1 {
+  font-weight: 320;
+}
+
+.weather-app {
+  background: linear-gradient(
+    109.6deg,
+    rgb(247, 202, 201) 20.6%,
+    rgb(146, 168, 209) 85.9%
+  );
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+
 ul {
-  font-size: 20px;
+  font-size: 17px;
   list-style: none;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+li:first-letter {
+  text-transform: capitalize;
 }
 
 #wh {
+  font-size: 15px;
   margin-right: 30px;
   display: inline-block;
+}
+.footer {
+  align-items: center;
+  color: rgb(227, 82, 159);
+}
+
+.Search {
+  background-color: rgb(247, 202, 201);
+  color: black;
+}
+.Search:hover {
+  background-color: rgb(260, 202, 218);
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}
+.btn-group-sm .btn {
+  padding: 0.2rem 0.4rem;
+  font-size: 10px;
+}
+.btn-group {
+  opacity: 0.6;
 }
