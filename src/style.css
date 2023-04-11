@@ -21,7 +21,7 @@ h1 {
 ul {
   font-size: 17px;
   list-style: none;
-  line-height: 1.5;
+
   margin: 0;
   padding: 0;
 }
@@ -47,14 +47,13 @@ li:first-letter {
   background-color: rgb(260, 202, 218);
 }
 
-img {
-  height: 50px;
-  width: 50px;
-}
 .btn-group-sm .btn {
   padding: 0.2rem 0.4rem;
   font-size: 10px;
 }
 .btn-group {
   opacity: 0.6;
+}
+.temp {
+  font-size: 60px;
 }
