@@ -54,6 +54,10 @@ function SearchcityWeather(city, lon, lat) {
 function getCity(event) {
   event.preventDefault();
   let input = document.querySelector(".form-control");
+  if (input.value.length === 0) {
+    alert("Please type a city");
+    return;
+  }
   SearchcityWeather(input.value);
 }
 let Search = document.querySelector(".SearchforCity");
