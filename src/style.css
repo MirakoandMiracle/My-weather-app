@@ -3,6 +3,7 @@ body {
   color: white;
   font-weight: 340;
 }
+
 h1 {
   font-weight: 340;
 }
@@ -21,7 +22,7 @@ h1 {
 ul {
   font-size: 17px;
   list-style: none;
-
+  line-height: 1.7;
   margin: 0;
   padding: 0;
 }
@@ -56,4 +57,23 @@ li:first-letter {
 }
 .temp {
   font-size: 60px;
+}
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+
+.weather-forecast .next6days {
+  font-size: 15px;
+  font-weight: 340;
+}
+.forecastTemp {
+  font-size: 13px;
+  font-weight: 340;
+}
+
+.min {
+  opacity: 0.6;
+  margin-left: 8px;
 }

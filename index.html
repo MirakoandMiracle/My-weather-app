@@ -20,6 +20,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/style.css" />
+    
+</head>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script
       src="https://kit.fontawesome.com/258c0c66d8.js"
@@ -45,12 +47,16 @@
           </form>
           <!--Today Weather  Showing -->
           <div class="TodayWeather mt-3">
+            <!--main content-->
             <div class="row">
               <div class="col-6">
                 <ul>
                   <li class="country"><strong></strong></li>
                   <li><h1 id="city"></h1></li>
-                  <li id="date"></li>
+                  <li >
+                    <small>Last updated:</small>
+                    <span id="date"></span>
+                  </li>
                   <li id="weather-condition"></li>
                 </ul>
               </div>
@@ -73,7 +79,7 @@
                 </div>
               </div>
             </div>
-
+            <!--wind, humidity-->
             <div class="row">
               <div class="col-12">
                 <ul>
@@ -91,6 +97,74 @@
               </div>
             </div>
           </div>
+          <!--Today weather ending-->
+
+          <!-- Weather forcast-->
+          <div class="weather-forecast">
+            <div class="row">
+              <div class="col-4 col-lg-2">
+                <div class="next6days">Thu</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="forecast"
+                />
+                <div class="forecastTemp">
+                  <span class="max">31</span><span class="min">27</span>
+                </div>
+              </div>
+              <div class="col-4 col-lg-2">
+                <div class="next6days">Thu</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="forecast"
+                />
+                <div class="forecastTemp ">
+                  <span class="max">31</span><span class="min">27</span>
+                </div>
+              </div>
+              <div class="col-4 col-lg-2">
+                <div class="next6days">Thu</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="forecast"
+                />
+                <div class="forecastTemp">
+                  <span class="max">31</span><span class="min">27</span>
+                </div>
+              </div>
+              <div class="col-4 col-lg-2">
+                <div class="next6days">Thu</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="forecast"
+                />
+                <div class="forecastTemp">
+                  <span class="max">31</span><span class="min">27</span>
+                </div>
+              </div>
+              <div class="col-4 col-lg-2">
+                <div class="next6days">Thu</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="forecast"
+                />
+                <div class="forecastTemp">
+                  <span class="max">31</span><span class="min">27</span>
+                </div>
+              </div>
+              <div class="col-4 col-lg-2">
+                <div class="next6days">Thu</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="forecast"
+                />
+                <div class="forecastTemp">
+                  <span class="max">31</span><span class="min">27</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--forecast end-->
         </div>
         <small class="footer">
           <a
