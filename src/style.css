@@ -29,7 +29,9 @@ ul {
 li:first-letter {
   text-transform: capitalize;
 }
-
+#imgT {
+  margin-top: -20px;
+}
 #wh {
   font-size: 15px;
   margin-right: 30px;
@@ -60,6 +62,7 @@ li:first-letter {
 }
 .weather-forecast {
   margin-top: 20px;
+
   text-align: center;
   color: white;
 }
@@ -71,9 +74,14 @@ li:first-letter {
 .forecastTemp {
   font-size: 13px;
   font-weight: 340;
+  margin-bottom: 20px;
 }
 
 .min {
   opacity: 0.6;
   margin-left: 8px;
+}
+
+.forecastimg {
+  width: 50px;
 }

@@ -21,7 +21,47 @@ function formatDate(timestamp) {
   let day = days[current.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  return days[day];
+}
+
+function DisplayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector(".weather-forecast");
+  let forecastHtml = `<div class="row">`;
+  forecast.forEach(function (forecastday, index) {
+    if (index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="col-4 col-lg-2">
+                <div class="next6days">${formatDay(forecastday.time)}</div>
+                <img
+                  src="${forecastday.condition.icon_url}"
+                  alt="${forecastday.condition.icon}" class="forecastimg"
+                />
+                <div class="forecastTemp">
+                  <span class="max">${Math.round(
+                    forecastday.temperature.maximum
+                  )}</span><span class="min">${Math.round(
+          forecastday.temperature.minimum
+        )}</span>
+                </div>
+              </div>`;
+    }
+  });
+
+  forecastHtml = forecastHtml + `</div>`;
+  forecastElement.innerHTML = forecastHtml;
+}
+function getForecast(coord) {
+  let Apikey = "b3584c6545a2013b0440f785b9e39t5o";
+  let Url = `https://api.shecodes.io/weather/v1/forecast?lon=${coord.longitude}&lat=${coord.latitude}&key=${Apikey}&units`;
+  axios.get(Url).then(DisplayForecast);
+}
 function DisplayTemp(response) {
   let city = document.querySelector("#city");
   let country = document.querySelector(".country");
@@ -43,11 +83,11 @@ function DisplayTemp(response) {
   date.innerHTML = formatDate(response.data.time * 1000);
   wind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
   humidity.innerHTML = `${response.data.temperature.humidity}% `;
+  getForecast(response.data.coordinates);
 }
-
-function SearchcityWeather(city, lon, lat) {
+function SearchcityWeather(city) {
   let Apikey = "b3584c6545a2013b0440f785b9e39t5o";
-  let Url = `https://api.shecodes.io/weather/v1/current?query=${city}&lon=${lon}&lat=${lat}&key=${Apikey}&units=metric`;
+  let Url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${Apikey}&units=metric`;
   axios.get(Url).then(DisplayTemp);
 }
 
@@ -62,30 +102,6 @@ function getCity(event) {
 }
 let Search = document.querySelector(".SearchforCity");
 Search.addEventListener("submit", getCity);
-
-function Celsiusahange(event) {
-  event.preventDefault();
-  let Tempture = document.querySelector(".temp");
-  let unitForT = document.querySelector(".unitT");
-  Tempture.innerHTML = celsiustemperature;
-  unitForT.innerHTML = "°C";
-}
-let celsiustemperature = null;
-
-let Cbtn = document.querySelector(".c");
-Cbtn.addEventListener("click", Celsiusahange);
-
-function FarenChange(event) {
-  event.preventDefault();
-  let Tempture = document.querySelector(".temp");
-  let unitForT = document.querySelector(".unitT");
-  let fahrenheiTemperature = (celsiustemperature * 9) / 5 + 32;
-  Tempture.innerHTML = Math.round(fahrenheiTemperature);
-  unitForT.innerHTML = "°F";
-}
-
-let Fbtn = document.querySelector(".f");
-Fbtn.addEventListener("click", FarenChange);
 
 function getLocation(position) {
   let lat = position.coords.latitude;
