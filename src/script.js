@@ -37,7 +37,8 @@ function DisplayForecast(response) {
     if (index < 6) {
       forecastHtml =
         forecastHtml +
-        `<div class="col-4 col-lg-2">
+        `<div class="col-4 col-md-2 ">
+        <div class=" ctn">
                 <div class="next6days">${formatDay(forecastday.time)}</div>
                 <img
                   src="${forecastday.condition.icon_url}"
@@ -49,7 +50,7 @@ function DisplayForecast(response) {
                   )}</span><span class="min">${Math.round(
           forecastday.temperature.minimum
         )}</span>
-                </div>
+                </div> </div>
               </div>`;
     }
   });
